@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+/* CSS France Perfum */
+/* Início estilo header */
+
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+#menu a {
+  color: black;
+  text-decoration: none;
+  font-family: "Abel", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  transition: 0.3s;
+  text-align: center;
+  padding: 0 0.4em;
+  font-size: 24px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom: 2px solid #24ee15;
+  box-shadow: 1px 1px 2px #969696;
+  background: #ffffff;
+}
+#menu a:hover {
+  font-size: 22px;
+  border-bottom-left-radius: 15px; /* Arredondar canto abaixo e esquerdo */
+  border-bottom-right-radius: 15px; /* Arredondar canto abaixo e direito */
+  border-bottom: 0.1px solid #000000;
+}
+#logo img {
+  height: 40px;
+}
+
+#logo img:hover {
+  box-shadow: 2px 2px 4px #cbcbcb;
+  transition: 0.3s;
+}
+
+#header {
+  box-sizing: border-box;
+  height: 80px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  background: #e7e7e7;
+  box-shadow: 3px 3px 6px #b1b1b1; /* Sombra do Menu */
+  top: 0;
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 0.8rem; 
+  /* rem unidade de medida relativa que varia de acordo
+  com a dimensão do navegador ou dispositivo, por padrão, 1rem é igual
+  a 16px */
+  /* gap > define o espaçamento entre linhas e colunas de um flexbox*/
+  z-index: 1000;
+  /* justify-content: center; */
+}
+ul, dl, ol #menu{
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+#btn-mobile {
+  display: none;
+}
+.container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#carouselExampleInterval {
+  width: 60%;
+  height: auto;
+  display: flex;
+  position: relative;
+  z-index: 100;
+  /* Garante que o carousel esteja acima de outros elementose 
+  utilizando um número menor #menu, ficará atrás do menu */
+  margin-top: 10px;
+}
+
+.carousel-item img {
+  min-height: 350px;
+  width: 50%;
+}
+@media (max-width: 600px) {
+    #menu {
+        display: block;
+        position: absolute;
+        width: 15em;
+        top: 70px;
+        right: 0px;
+        background: #e7e7e7;
+        transition: 0.6s;
+        z-index: 500;
+        height: 0px;
+        padding-left: 5px;
+        visibility: hidden;
+        overflow: hidden;
+    }
+    #menu li {
+        padding-top: 30px;
+        padding-bottom: 0px;
+        margin: 01rem;
+        border-bottom: 2px solid rgba(red, green, blue, alpha);
+    }
+    #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: hidden;
+    }
+    #btn-mobile {
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+    }
+    #hamburguer {
+        border-top: 2px solid;
+        /* melhorando o hamburguer > Espessura linha */
+        width: 30px;
+        /* altera a largura do hamburguer*/
+        color: #003f91;
+        /* altera a cor do hamburguer*/
+    }
+    #hamburguer::after,
+    #hamburguer::before {
+        content: '';
+        display: block;
+        width: 30px;
+        /* altera a largura do icone hamburguer*/
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 4px;
+        /* alterar o espaçamento entre o hamburguer*/
+        position: relative;
+        border-top: 2px solid;
+        /* melhorando o hamburguer > espessura da linha */
+    }
+    #nav.active #hamburguer {
+        border-top-color: transparent;
+    }
+    #nav.active #hamburguer::before {
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after {
+        transform: rotate(-135deg);
+        top: 7px;
+    }
+}
